@@ -1,7 +1,7 @@
 const VolatileTokenData = require('./../build/contracts/VolatileToken.json')
 const StableTokenData = require('./../build/contracts/StableToken.json')
 const SeigniorageData = require('./../build/contracts/Seigniorage.json')
-const Web3 = require('web3');
+const { Web3 } = require('../src/config/web3');
 const Tx = require('ethereumjs-tx')
 const BigNumber = require('bignumber.js')
 const crypto = require('crypto')

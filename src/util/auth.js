@@ -1,35 +1,31 @@
 import store from '@/store'
-
-import {USER_ROLE} from '@/constant'
-import {api_request} from './'
 import {CONTRACTS} from '@/constant'
-import Web3 from "web3";
+import Web3 from "web3"
 
+export const setupWeb3 = async (callback = null) => {
+  const userRedux = store.getRedux('user')
+  let isRequest = false
+  let isLoggedIn = false
+  const web3 = new Web3(window.ethereum)
 
-// export const setupWeb3 = async (callback = null) => {
-//   const userRedux      = store.getRedux('user')
-//   let isRequest        = false
-//   let isLoggedIn       = false
-
-//   await window.web3.eth.getAccounts(async (err, accounts) => {
-//     if (err) return
-//     if (accounts.length > 0) {
-//       // detect account switch
-//       if (!isLoggedIn) {
-//         const web3 = new Web3(window.ethereum)
-//         store.dispatch(userRedux.actions.web3_update(web3))
-//         store.dispatch(userRedux.actions.wallet_update(accounts[0]))
-//         if (callback) await callback()
-//       }
-//     } else {
-//       if (!isRequest) {
-//         isRequest = true
-//         await window.ethereum.enable()
-//       }
-//       store.dispatch(userRedux.actions.loginMetamask_update(false))
-//     }
-//   })
-// }
+  await web3.eth.requestAccounts(async (err, accounts) => {
+    if (err) return
+    if (accounts.length > 0) {
+      // detect account switch
+      if (!isLoggedIn) {
+        store.dispatch(userRedux.actions.web3_update(web3))
+        store.dispatch(userRedux.actions.wallet_update(accounts[0]))
+        if (callback) await callback()
+      }
+    } else {
+      if (!isRequest) {
+        isRequest = true
+        await window.ethereum.enable()
+      }
+      store.dispatch(userRedux.actions.loginMetamask_update(false))
+    }
+  })
+}
 
 
 // export const loginEzdefi = (callback) => {
