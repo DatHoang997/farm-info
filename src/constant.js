@@ -1,7 +1,4 @@
 const ReadWrite = require('./../build/' + process.env.NODE_ENV + '/contracts/ReadWrite.json')
-const PocToken = require( './../build/' + process.env.NODE_ENV + '/contracts/POC_Token.json')
-const PocPool = require( './../build/' + process.env.NODE_ENV + '/contracts/POC_Pool.json')
-const Citizen = require( './../build/' + process.env.NODE_ENV + '/contracts/Citizen.json')
 
 export const NetIds = {
   development: 66666,
@@ -24,24 +21,10 @@ export const CONTRACTS =
            'abi': ReadWrite.abi,
            'address': ReadWrite.networks[NetId].address
          },
-       'PocToken':
-         {
-           'abi': PocToken.abi,
-           'address': PocToken.networks[NetId].address
-         },
-       'PocPool':
-         {
-           'abi': PocPool.abi,
-           'address': PocPool.networks[NetId].address
-         },
-       'Citizen':
-         {
-           'abi': Citizen.abi,
-           'address': Citizen.networks[NetId].address
-         }
      }
 
 export const USER_LANGUAGE = {
+  
   en: 'en'
 }
 

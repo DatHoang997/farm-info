@@ -114,7 +114,7 @@ export function usdtToWei(coin) {
   return truncateShift(coin, 6);
 }
 
-export function weiToPOC(wei) {
+export function weiToDecimal18(wei) {
   return decShift(wei, -18);
 }
 

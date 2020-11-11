@@ -1,6 +1,6 @@
 
 import NotFound from '@/module/page/error/notfound'
-import ClaimSRM from '@/module/page/claimSRM/index'
+import Home from '@/module/page/home/index'
 import Login from '@/module/page/auth/login'
 
 export default [
@@ -15,7 +15,7 @@ export default [
   },
   {
     path: '/',
-    page: ClaimSRM,
+    page: Home,
   },
   {
     path: '/login',

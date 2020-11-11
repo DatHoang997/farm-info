@@ -67,7 +67,6 @@ module.exports = merge(common, {
     contentBase: 'dev_dist',
     port: 3001,
     hot: true,
-
     watchOptions: {
       ignored: /node_modules/
     },
@@ -89,9 +88,11 @@ module.exports = merge(common, {
         NODE_ENV: JSON.stringify('development'),
         PLATFORM_ENV: JSON.stringify('web'),
         SERVER_URL: JSON.stringify('http://localhost:3030/api'),
-        USDT_CONTRACT_ADDRESS: JSON.stringify('TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t'),
-        USDT_POOL: JSON.stringify('TZJQ3dz8ndvCu3CELGRBhAkZCe8uG1EJPL'),
-        POC_POOL: JSON.stringify('0x6dd6A324909814DD62C4d26E66185469D95C449D')
+        PANCAKE_SWAP_LIQUIDITY_CONTRACT_ADDRESS: JSON.stringify('0x05fF2B0DB69458A0750badebc4f9e13aDd608C7F'),
+        PANCAKE_SWAP_POOL_CONTRACT_ADDRESS: JSON.stringify('0x4e0f3385d932F7179DeE045369286FFa6B03d887'),
+        CAKE_CONTRACT_ADDRESS: JSON.stringify('0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82'),
+        XVS_BNB_CONTRACT_ADDRESS: JSON.stringify('0x41182c32F854dd97bA0e0B1816022e0aCB2fc0bb'),
+        ALPHA_BNB_CONTRACT_ADDRESS: JSON.stringify('0x4e0f3385d932F7179DeE045369286FFa6B03d887'),
       }
     }),
     new webpack.optimize.OccurrenceOrderPlugin(),

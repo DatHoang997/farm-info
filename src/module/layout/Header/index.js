@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Row, Col } from 'antd'
 import I18N from '@/I18N'
 import './style.scss'
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.css'
 
 const HeaderComponent = () => {
   return (
