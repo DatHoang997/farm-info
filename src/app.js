@@ -26,9 +26,9 @@ const App = () => {
       </Helmet>
       <Switch id="ss-main">
         {_.map(config.router, (item, i) => {
-          console.log('item', item)
+          // console.log('item', item)
           const props = _.omit(item, ['page', 'path', 'type'])
-          console.log('props', props)
+          // console.log('props', props)
           // const R = PrivateRoute
           // console.log('R',R)
           return (
